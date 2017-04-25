@@ -1,4 +1,7 @@
-# api documentation for  [hyperterm-1password (v2.0.1)](https://github.com/sibartlett/hyperterm-1password)  [![npm package](https://img.shields.io/npm/v/npmdoc-hyperterm-1password.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-hyperterm-1password) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-hyperterm-1password.svg)](https://travis-ci.org/npmdoc/node-npmdoc-hyperterm-1password)
+# npmdoc-hyperterm-1password
+
+#### basic api documentation for  [hyperterm-1password (v2.0.1)](https://github.com/sibartlett/hyperterm-1password)  [![npm package](https://img.shields.io/npm/v/npmdoc-hyperterm-1password.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-hyperterm-1password) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-hyperterm-1password.svg)](https://travis-ci.org/npmdoc/node-npmdoc-hyperterm-1password)
+
 #### 1Password extension for HyperTerm
 
 [![NPM](https://nodei.co/npm/hyperterm-1password.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/hyperterm-1password)
@@ -56,7 +59,8 @@
         "url": "git://github.com/sibartlett/hyperterm-1password.git"
     },
     "scripts": {},
-    "version": "2.0.1"
+    "version": "2.0.1",
+    "bin": {}
 }
 ```
 
