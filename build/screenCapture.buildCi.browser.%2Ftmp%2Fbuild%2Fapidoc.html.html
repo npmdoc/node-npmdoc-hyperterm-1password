@@ -65,19 +65,6 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.hyperterm-1password.decorateTerm">module hyperterm-1password.decorateTerm</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.hyperterm-1password.decorateTerm.decorateTerm">
-            function <span class="apidocSignatureSpan">hyperterm-1password.</span>decorateTerm
-            <span class="apidocSignatureSpan">(Term, { React, notify })</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -86,73 +73,6 @@
 
     <h2>
         <a href="#apidoc.element.hyperterm-1password.decorateTerm" id="apidoc.element.hyperterm-1password.decorateTerm">
-        function <span class="apidocSignatureSpan">hyperterm-1password.</span>decorateTerm
-        <span class="apidocSignatureSpan">(Term, { React, notify })</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">(Term, { React, notify }) =&gt; {
-
-  let credentials = JSON.parse(window.localStorage.getItem(CRED_KEY));
-
-  if (!credentials) {
-    credentials = onepass.auth.generateCredentials();
-    window.localStorage.setItem(CRED_KEY, JSON.stringify(credentials));
-  }
-
-  onepass.auth.credentials(credentials);
-
-  onepass.on("authCode", code =&gt; {
-    notify(`1Password auth code: ${code}`);
-  });
-
-  return class extends React.Component {
-
-    constructor (props, context) {
-      super(props, context);
-      this._onTerminal = this._onTerminal.bind(this);
-    }
-
-    _onTerminal (term) {
-      if (this.props &amp;&amp; this.props.onTerminal) this.props.onTerminal(term);
-
-      const handler = [
-        "keydown",
-        function(e) {
-          if (e.metaKey &amp;&amp; e.keyCode === 220) {
-            e.preventDefault();
-            onepass.password("sudolikeaboss://local")
-                   .then(pass =&gt; this.terminal.io.sendString(pass))
-                   .catch(() =&gt; {});
-          }
-        }.bind(term.keyboard)
-      ];
-
-      term.uninstallKeyboard();
-      term.keyboard.handlers_ = [handler].concat(term.keyboard.handlers_);
-      term.installKeyboard();
-    }
-
-    render () {
-      return React.createElement(Term, Object.assign({}, this.props, {
-        onTerminal: this._onTerminal
-      }));
-    }
-
-  };
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.hyperterm-1password.decorateTerm" id="apidoc.module.hyperterm-1password.decorateTerm">module hyperterm-1password.decorateTerm</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.hyperterm-1password.decorateTerm.decorateTerm" id="apidoc.element.hyperterm-1password.decorateTerm.decorateTerm">
         function <span class="apidocSignatureSpan">hyperterm-1password.</span>decorateTerm
         <span class="apidocSignatureSpan">(Term, { React, notify })</span>
         </a>
